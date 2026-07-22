@@ -6,11 +6,13 @@ Accepted: 2026-07-22
 
 Based on: [accepted Intake Document](Intake.md) (accepted at `d2f94e054749c919fe94f0cd5e0663afaeeca391`)
 
+This proposal supersedes the previously accepted Discovery framing and requires independent validation and renewed human acceptance.
+
 ## Bearings
 
 This is a planning-only repository: the accepted Intake and its validation record are the only durable project artifacts. There is no application, deployment configuration, content corpus, or prior architecture to constrain the next phase.
 
-The platform remains subject-agnostic, with Malay as the first end-to-end validation—not the product model. The experience should favor purposeful learning interfaces over chat-first interaction.
+The platform is a generic, subject-agnostic adaptive-learning product. Malay is the product owner's primary personally meaningful use case and the most intensive end-to-end validation because language learning is a demanding teaching domain; it is neither the product model nor V1's only capability. The experience should favor purposeful learning interfaces over chat-first interaction.
 
 ## Durable human decision
 
@@ -18,11 +20,15 @@ The platform remains subject-agnostic, with Malay as the first end-to-end valida
 
 **Source:** Product owner decision communicated to the Discovery producer on 2026-07-22. This decision refines the accepted Intake's then-unspecified deployment target; it is not an inferred Intake constraint.
 
+## Scope clarification awaiting acceptance
+
+**Clarification (2026-07-22):** V1 is generic and subject-agnostic. Malay remains the primary personally meaningful and most intensive end-to-end validation use case, selected in part because language learning is a demanding teaching domain. It does not authorize a Malay-only or language-only V1; V1 must retain credible cross-subject capability. The exact breadth and depth of demonstrations belongs to Requirements scope.
+
 ## Prior decisions, guardrails, and useful starting points
 
 | Area | Discovery finding |
 | --- | --- |
-| Product and V1 scope | Build reusable adaptive-learning capabilities and validate them locally with the product owner learning Malay. Deployment and multi-user operation are explicitly out of V1. Do not build a Malay-only model. |
+| Product and V1 scope | Build reusable adaptive-learning capabilities for learning across subjects. Validate most intensively with the product owner learning Malay, while retaining credible cross-subject V1 capability. Requirements will decide the precise breadth and depth of demonstrations; neither it nor any later phase may reduce V1 to Malay-only or language-only capability. Deployment and multi-user operation are explicitly out of V1. |
 | Growth-path guardrail | Preserve seams and boundaries that make later deployment and multi-user operation credible without a fundamental rearchitecture. Include a seam or component in V1 only when it supports the local single-owner experience without delivering deployment or multi-user operation. |
 | Personalization and evidence | Adapt to prior knowledge, goals, pace, performance, and check-ins. Ground teaching in reliable resources; retain attribution and outcomes needed to assess effectiveness and reuse. |
 | Experience | Preserve consistent, usable interfaces and learner choices while allowing generative UI; minimize chat-first interaction. |
@@ -48,7 +54,8 @@ No other repository Guardrails or conflicting historical decisions were found.
 | Pedagogical model and measurement/calibration, including which Teach-skill practices to adopt | Requirements / Solution | The Teach skill is evidence for possible starting practices, not an accepted product dependency or complete pedagogy. Requirements must define outcomes and evidence before design selects an approach. |
 | Controlled promotion lifecycle for discovered lesson, UI, and backend capabilities | Requirements / Solution | Reuse is desired, but candidate criteria, evidence, human authority, review, versioning, rollback, and supported-capability boundaries have not been decided. Dynamic promotion may be post-V1, but must remain visible rather than becoming implicit scope. |
 | Dynamic artifact and tool security governance | Requirements / Solution | Before any persistence or execution, define the required trust boundary, provenance and review evidence, approval authority, permissions, isolation, auditability, revocation/rollback, and treatment of prompt-injection or malicious artifacts. Discovery establishes the prohibition on blind persistence/re-execution; it does not design the control implementation. |
-| Content provenance, licensing, and language-quality review | Requirements / Solution | Reliable grounding is required, but permitted sources and review ownership are undefined. |
+| Cross-subject V1 demonstration breadth and depth | Requirements | V1 must credibly demonstrate capability beyond Malay and beyond language learning, but the subjects, modalities, and evidence proportionate to that claim remain a product-scope decision. This decision must preserve Malay as the intensive validation use case, not replace the generic product framing. |
+| Content provenance, licensing, and subject-quality review | Requirements / Solution | Reliable grounding is required, but permitted sources and review ownership are undefined; language-quality review is one instance of the needed subject-matter authority. |
 | Stable, parameterized, and generated UI boundaries | Requirements / Solution | Generative UI is required, but individual surface boundaries are a product/design decision. |
 | Deployment, multi-user access, privacy, retention, consent, operations, stack, and budget | Later Requirements / Solution | Deployment and multi-user operation are deliberately out of V1. The associated delivery and policy decisions become necessary before a deployed or multi-user offering; the Solution phase still needs to honor the separate growth-path guardrail above. |
 
@@ -56,7 +63,7 @@ No other repository Guardrails or conflicting historical decisions were found.
 
 | Uncertainty | Boundary |
 | --- | --- |
-| Subjects and learning modalities after Malay | Outside the first end-to-end validation; only subject-agnostic extensibility is in scope now. |
+| Subjects and learning modalities beyond the Requirements-selected V1 demonstrations | V1 must retain credible cross-subject capability; broader subject and modality coverage is outside the initial scope decision. |
 | Scale, commercial model, integrations, and geographic rollout | Not specified and not needed for the local V1. |
 
 These uncertainties require human acceptance with this Discovery artifact but do not block Requirements Gathering once accepted.
@@ -72,4 +79,4 @@ Pedagogy, language-content quality, UX research, security governance, privacy, a
 
 ## Decision requested
 
-Accept this local-first Discovery framing and Delivery Team so Requirements Gathering can define the Malay V1 outcomes, evidence, reusable-capability boundaries, and safety/governance requirements without prematurely choosing implementation or a deployment model.
+Accept this revised local-first, generic adaptive-learning framing and Delivery Team so Requirements Gathering can decide V1's cross-subject demonstration scope, define Malay's intensive validation outcomes and evidence, and set reusable-capability and safety/governance requirements without prematurely choosing implementation or a deployment model.
