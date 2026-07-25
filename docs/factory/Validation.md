@@ -1,18 +1,17 @@
 # Validation
 
-Phase: Requirements Gathering
-
-Reviewed artifact: [Requirements Document](Requirements.md) (`Status: Proposed`)
-
-Accepted basis:
-
-- [Intake Document](Intake.md) (`Status: Accepted`; accepted at `d2f94e054749c919fe94f0cd5e0663afaeeca391`)
-- [Discovery Document](Discovery.md) (`Status: Accepted`; accepted at `50b86de2c174af4e0ace7866b42e96e9d72535bb`)
-
-Reviewed SHA256: 114382671d5a68a70244bbc6e65a206309c56ffeb4fdcccfe06272dddca6affc
+Result: Ready for human decision
 
 Validation Context: separate
 
-Evidence: The proposed Requirements links both committed accepted bases and retains their local, single-user, generic-product, Malay-intensive-validation, growth-path, grounding, and no-auto-trust guardrails. It defines functional outcomes and measurable acceptance evidence for immediate generated UI when stable components lack a fit, including layout/style conformity, durable component/run/provenance/validation/usage/outcome/feedback evidence, and denied-or-contained privilege-boundary attempts. It explicitly confines sandbox/renderer, capability model, artifact lifecycle, validation, audit, revocation/rollback, and stable-versus-generated boundaries to Solution without authorizing arbitrary execution or privileged access. Constraints, local operational evidence, future readiness, and accepted uncertainty are stated, and the document leaves one clear human acceptance decision.
+Phase: Work Execution Planning
 
-Result: Ready for human decision
+Reviewed artifact: [Work Execution Plan](WorkExecutionPlan.md) (`Status: Proposed`)
+
+Accepted bases: [Requirements Document](Requirements.md) (`Status: Accepted`; accepted at `50252064f91b500efd30bb95cc8ac14724bdf279`) and [Solution Document](Solution.md) (`Status: Accepted`; accepted 2026-07-25)
+
+Reviewed SHA256: 46dafa93a37c5ff2fc55eb1dc263815ee8f32518929941f55f30ea8e90ad2a69
+
+Artifact evidence: The plan names one Project, typed `h1` human Work Unit Owner and `a1` agent delivery team, flat PR-sized work items with hard dependencies, an ordered Demo Story, local operations/release work, and a late H1-owned runtime Wayfinder. `I01` enables the agent, renderer, persistence, and harness work to proceed in parallel. The Mermaid view now contains the conditional runtime-to-final-integration path (`I22 --> I23`), matching the authoritative conditional `I23` dependency. Later activity/SRS, catalog, adaptation/source, productization, and conditional runtime work retain the accepted evolutionary delivery order.
+
+Basis evidence: The plan implements the accepted generic local-first journey through the combined Teach/Learn agent and declarative HTML-first seam, application-owned durable records, later practical activities/SRS and stable components, mature evidence-driven adaptation and algorithmic source policy after core evidence, a constrained generated-component boundary, no H1 source-use gate, and human-owned release/license decisions.
