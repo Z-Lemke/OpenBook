@@ -1,18 +1,23 @@
-# Validation
+# Validation Record
 
-Phase: Requirements Gathering
+Result: Ready for human decision
 
-Reviewed artifact: [Requirements Document](Requirements.md) (`Status: Proposed`)
-
-Accepted basis:
-
-- [Intake Document](Intake.md) (`Status: Accepted`; accepted at `d2f94e054749c919fe94f0cd5e0663afaeeca391`)
-- [Discovery Document](Discovery.md) (`Status: Accepted`; accepted at `50b86de2c174af4e0ace7866b42e96e9d72535bb`)
-
-Reviewed SHA256: 114382671d5a68a70244bbc6e65a206309c56ffeb4fdcccfe06272dddca6affc
+Phase: Requirements validation
 
 Validation Context: separate
 
-Evidence: The proposed Requirements links both committed accepted bases and retains their local, single-user, generic-product, Malay-intensive-validation, growth-path, grounding, and no-auto-trust guardrails. It defines functional outcomes and measurable acceptance evidence for immediate generated UI when stable components lack a fit, including layout/style conformity, durable component/run/provenance/validation/usage/outcome/feedback evidence, and denied-or-contained privilege-boundary attempts. It explicitly confines sandbox/renderer, capability model, artifact lifecycle, validation, audit, revocation/rollback, and stable-versus-generated boundaries to Solution without authorizing arbitrary execution or privileged access. Constraints, local operational evidence, future readiness, and accepted uncertainty are stated, and the document leaves one clear human acceptance decision.
+Reviewed artifact: [proposed Requirements Document](Requirements.md)
 
-Result: Ready for human decision
+Reviewed SHA256: 63fc1da754aebdefc1a40ff96674d15d13795ae2c4fbfb6d0e5a754e8ca0ec30
+
+## Basis evidence
+
+| Artifact | Evidence |
+| --- | --- |
+| Intake Document | [accepted Intake Document](Intake.md), accepted at `d2f94e054749c919fe94f0cd5e0663afaeeca391`; `Status: Accepted` |
+| Discovery Document | [accepted Discovery Document](Discovery.md), accepted at `50b86de2c174af4e0ace7866b42e96e9d72535bb`; `Status: Accepted` |
+| Requirements Document | [proposed Requirements Document](Requirements.md); `Status: Proposed` |
+
+## Independent check
+
+The proposed Requirements links to and is consistent with the named accepted Intake and Discovery bases. It preserves the local, single-user, generic adaptive-learning V1; Malay as intensive validation rather than a product boundary; cross-subject evidence; durable learning records; purposeful learner UI; governed immediate generated UI; and the growth-path guardrail. It converts source governance into testable product outcomes and acceptance evidence: agents discover candidates before teaching; records retain coverage, use, provenance, permitted-use, qualification/ranking, selection/reuse, and outcome feedback; useful knowledge/evidence and community/practitioner distinctions are available; material gaps are recorded; and weak-source effects remain observable. The stated no-H1-curated-corpus and no-H1-approval-gate boundary is explicit, while exact algorithms, thresholds, and policies remain correctly deferred to Solution. It also makes the open-source boundary decision-ready: a human selects and records the license before public release; contributor setup, checks, governance, and private disclosure are required; third-party and releasable generated artifacts receive terms/provenance treatment; protected learner, model, and source data remain non-public by default. Generated components retain immediate rendering only through constrained approved UI capabilities, with no implicit execution or privileged access. No required authority is missing for the requested human decision.
