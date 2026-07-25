@@ -1,10 +1,12 @@
 # Requirements Document
 
-Status: Proposed
+Status: Accepted
+
+Accepted: 2026-07-25
 
 Based on: [accepted Intake Document](Intake.md) (accepted at `d2f94e054749c919fe94f0cd5e0663afaeeca391`) and [accepted Discovery Document](Discovery.md) (accepted at `50b86de2c174af4e0ace7866b42e96e9d72535bb`)
 
-This proposal supersedes the accepted Requirements Document. It requires independent validation and renewed human acceptance before it becomes a basis for Solution work.
+This document supersedes the previously accepted Requirements Document.
 
 ## Product outcome
 
