@@ -38,11 +38,17 @@ _Avoid_: promotion, auto-approval
 
 ## Grounding and accountability
 
-**Approved Source**: A reliable, permitted resource that the product owner has allowed the product to retrieve and cite.  
-_Avoid_: web result, model knowledge
+**Source Record**: A durable candidate or retrieved source form with its available provenance, permitted-use signals, coverage, qualification/ranking evidence, selection/reuse history, and outcome links.
+_Avoid_: approved source, trusted corpus
 
-**Source Snapshot**: The identified retrieved form of an Approved Source used to ground a decision or artifact.  
-_Avoid_: citation
+**Source Gap**: A recorded material instructional need for which the available discovered evidence does not adequately support a claim or activity.
+_Avoid_: model fill-in, missing citation
 
-**Artifact Lineage**: The immutable links from an output to its inputs, generator run, source snapshots, and predecessor versions.  
+**Course Artifact**: An immutable, versioned, declarative description of a course or journey revision that a local renderer can deterministically present.
+_Avoid_: executable lesson, page code
+
+**Renderer**: The trusted local application boundary that converts a Course Artifact and bounded learner state into learner UI and validated learner commands.
+_Avoid_: agent UI, generated code
+
+**Artifact Lineage**: The immutable links from an output to its inputs, generator run, source records, and predecessor versions.
 _Avoid_: metadata, history
