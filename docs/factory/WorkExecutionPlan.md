@@ -1,6 +1,8 @@
 # Work Execution Plan
 
-Status: Proposed
+Status: Accepted
+
+Accepted: 2026-07-25
 
 Based on: [accepted Requirements Document](Requirements.md) (accepted at `50252064f91b500efd30bb95cc8ac14724bdf279`) and [accepted Solution Document](Solution.md) (accepted 2026-07-25)
 
@@ -245,9 +247,9 @@ metadata is evidence and feedback, not a dependency unless explicitly named in a
 | 6 | `D06` Generated component, if justified | `U07` | Only if opened, `h1` reviews bounded capability, denial, provenance, fallback, and revocation evidence. | Security concern prevents richer privilege; no decision leaves the normal route in place. |
 | 7 | `D07` Local/open-source readiness | `U04`, `U08` | `h1` or a contributor follows clean setup/check/recovery/contribution guidance and reviews release inventory. | License, data, notice, or disclosure gaps revise U08; no release occurs until resolved. |
 
-## Human decision requested
+## Human decision
 
-Independently validate this proposed Work Execution Plan, then accept it if the parallel
-delivery strategy, dependencies, ownership, Wayfinder gates, and Demo Story remain aligned
-with the accepted Requirements and Solution. This plan neither accepts itself nor begins
-Build Execution.
+Accepted by Luke Lemke on 2026-07-25. The parallel delivery strategy, dependencies,
+ownership, Wayfinder gates, and Demo Story are approved as the basis for tracker
+synchronization. Build Execution remains unavailable until the accepted plan is
+materialized in the authoritative tracker.
