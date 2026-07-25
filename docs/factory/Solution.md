@@ -1,6 +1,8 @@
 # Solution Document
 
-Status: Proposed
+Status: Accepted
+
+Accepted: 2026-07-25
 
 Based on: [accepted Requirements Document](Requirements.md) (accepted at 50252064f91b500efd30bb95cc8ac14724bdf279) and [accepted Discovery Document](Discovery.md) (accepted at 50b86de2c174af4e0ace7866b42e96e9d72535bb)
 
