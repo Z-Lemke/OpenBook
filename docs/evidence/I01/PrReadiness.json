@@ -1,0 +1,80 @@
+{
+  "binding": {
+    "item_id": "I01",
+    "pull_request": "https://github.com/Z-Lemke/OpenBook/pull/36",
+    "run_id": "20260726-i01-course-artifact-7c0941"
+  },
+  "report": {
+    "checks": [
+      {
+        "detail": "complete",
+        "id": "structure",
+        "label": "template structure",
+        "status": "pass"
+      },
+      {
+        "detail": "complete",
+        "id": "intent",
+        "label": "intent and outcome",
+        "status": "pass"
+      },
+      {
+        "detail": "complete",
+        "id": "work_item_linkage",
+        "label": "Work Item and tracker linkage",
+        "status": "pass"
+      },
+      {
+        "detail": "complete",
+        "id": "bounded_scope",
+        "label": "bounded scope",
+        "status": "pass"
+      },
+      {
+        "detail": "complete",
+        "id": "automated_evidence",
+        "label": "automated evidence",
+        "status": "pass"
+      },
+      {
+        "detail": "complete",
+        "id": "human_qa",
+        "label": "useful human QA",
+        "status": "pass"
+      },
+      {
+        "detail": "complete",
+        "id": "review",
+        "label": "review and finding dispositions",
+        "status": "pass"
+      },
+      {
+        "detail": "complete",
+        "id": "demonstration",
+        "label": "Demonstration metadata",
+        "status": "pass"
+      },
+      {
+        "detail": "complete",
+        "id": "target_completion",
+        "label": "target-aware completion",
+        "status": "pass"
+      }
+    ],
+    "completion": {
+      "claim": "review-ready-not-complete",
+      "closing_keywords_present": true,
+      "mode": "native-default-branch",
+      "native_closing_keywords_effective": true,
+      "note": "Recognized GitHub closing keywords are default-branch automation evidence and may close linked issues only after merge; completion still requires confirmed Definition of Done and tracker state."
+    },
+    "ready": true,
+    "schema_version": 1,
+    "target": {
+      "branch": "main",
+      "default_branch": "main",
+      "is_default": true
+    }
+  },
+  "schema_version": 1
+}
