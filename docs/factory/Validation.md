@@ -4,14 +4,16 @@ Result: Ready for human decision
 
 Validation Context: separate
 
-Phase: Work Execution Planning
+Phase: Solution Planning
 
-Reviewed artifact: [Work Execution Plan](WorkExecutionPlan.md) (`Status: Proposed`)
+Reviewed artifact: [Solution Document](Solution.md) (`Status: Proposed`)
 
-Accepted bases: [Requirements Document](Requirements.md) (`Status: Accepted`; accepted at `50252064f91b500efd30bb95cc8ac14724bdf279`) and [Solution Document](Solution.md) (`Status: Accepted`; accepted 2026-07-25)
+Accepted bases: [Requirements Document](Requirements.md) (`Status: Accepted`; accepted at `50252064f91b500efd30bb95cc8ac14724bdf279`) and [Discovery Document](Discovery.md) (`Status: Accepted`; accepted at `50b86de2c174af4e0ace7866b42e96e9d72535bb`)
 
-Reviewed SHA256: 46dafa93a37c5ff2fc55eb1dc263815ee8f32518929941f55f30ea8e90ad2a69
+Reviewed SHA256: b76601008ea7606ce81a03c7e2945d790a160c0658c6df71cce6324f754c0695
 
-Artifact evidence: The plan names one Project, typed `h1` human Work Unit Owner and `a1` agent delivery team, flat PR-sized work items with hard dependencies, an ordered Demo Story, local operations/release work, and a late H1-owned runtime Wayfinder. `I01` enables the agent, renderer, persistence, and harness work to proceed in parallel. The Mermaid view now contains the conditional runtime-to-final-integration path (`I22 --> I23`), matching the authoritative conditional `I23` dependency. Later activity/SRS, catalog, adaptation/source, productization, and conditional runtime work retain the accepted evolutionary delivery order.
+Artifact evidence: The proposed TypeScript-first Next.js/React application keeps the local Node process and SQLite adapter as the authoritative V1 runtime, separates framework-independent contract/core packages from web and infrastructure adapters, and makes Vercel a later web-adapter deployment rather than a durable record or job runtime. Its Course Artifact JSON Schema/TypeScript validator and deterministic React/HTML renderer preserve the Course Artifact-to-Renderer seam. The staged design retains agent-driven source discovery/gaps and bounded adaptation in the HTML-learning loop, defers mature source policy and capability adaptation until sufficient evidence, and keeps immediate generated pages declarative while preserving the constrained executable-runtime Wayfinder and its denial/audit boundary. It also specifies ordinary TypeScript checks, Vitest, and pull-request CI.
 
-Basis evidence: The plan implements the accepted generic local-first journey through the combined Teach/Learn agent and declarative HTML-first seam, application-owned durable records, later practical activities/SRS and stable components, mature evidence-driven adaptation and algorithmic source policy after core evidence, a constrained generated-component boundary, no H1 source-use gate, and human-owned release/license decisions.
+Basis evidence: This remains local-first, single-user, subject-agnostic, and purpose-built-UI oriented as required. It preserves durable learner/source/lineage records, no H1 source-use approval gate, later SRS and cross-subject demonstrations, and credible hosted/multi-user seams without delivering them in V1. The approach comparison directly resolves the PR #36 two-stack concern without weakening those accepted outcomes.
+
+Consequence: If H1 accepts this revision, the accepted Work Execution Plan and its tracker graph must be replanned/reconciled against the revised TypeScript/Next basis before additional implementation work proceeds.
