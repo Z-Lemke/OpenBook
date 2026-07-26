@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://openbook.local/schemas/learner-command/v1.schema.json",
+  "title": "OpenBook Learner Command v1",
+  "description": "A validated learner intent at the React-to-application boundary. It is not a persistence instruction.",
+  "oneOf": [
+    { "$ref": "#/$defs/startJourney" },
+    { "$ref": "#/$defs/resumeJourney" },
+    { "$ref": "#/$defs/recordWork" },
+    { "$ref": "#/$defs/recordFeedback" }
+  ],
+  "$defs": {
+    "id": { "type": "string", "pattern": "\\S" },
+    "base": { "type": "object", "required": ["commandVersion", "commandId", "learnerId"], "properties": { "commandVersion": { "const": "learner-command/v1" }, "commandId": { "$ref": "#/$defs/id" }, "learnerId": { "$ref": "#/$defs/id" } } },
+    "startJourney": { "allOf": [{ "$ref": "#/$defs/base" }, { "type": "object", "additionalProperties": false, "required": ["type", "goal", "availableMinutes"], "properties": { "commandVersion": { "const": "learner-command/v1" }, "commandId": { "$ref": "#/$defs/id" }, "learnerId": { "$ref": "#/$defs/id" }, "type": { "const": "startJourney" }, "goal": { "$ref": "#/$defs/id" }, "availableMinutes": { "type": "integer", "minimum": 1 } } }] },
+    "resumeJourney": { "allOf": [{ "$ref": "#/$defs/base" }, { "type": "object", "additionalProperties": false, "required": ["type", "journeyId"], "properties": { "commandVersion": { "const": "learner-command/v1" }, "commandId": { "$ref": "#/$defs/id" }, "learnerId": { "$ref": "#/$defs/id" }, "type": { "const": "resumeJourney" }, "journeyId": { "$ref": "#/$defs/id" } } }] },
+    "recordWork": { "allOf": [{ "$ref": "#/$defs/base" }, { "type": "object", "additionalProperties": false, "required": ["type", "artifactId", "lessonId", "outcome"], "properties": { "commandVersion": { "const": "learner-command/v1" }, "commandId": { "$ref": "#/$defs/id" }, "learnerId": { "$ref": "#/$defs/id" }, "type": { "const": "recordWork" }, "artifactId": { "$ref": "#/$defs/id" }, "lessonId": { "$ref": "#/$defs/id" }, "outcome": { "enum": ["completed", "needs-review"] } } }] },
+    "recordFeedback": { "allOf": [{ "$ref": "#/$defs/base" }, { "type": "object", "additionalProperties": false, "required": ["type", "artifactId", "lessonId", "rating"], "properties": { "commandVersion": { "const": "learner-command/v1" }, "commandId": { "$ref": "#/$defs/id" }, "learnerId": { "$ref": "#/$defs/id" }, "type": { "const": "recordFeedback" }, "artifactId": { "$ref": "#/$defs/id" }, "lessonId": { "$ref": "#/$defs/id" }, "rating": { "enum": ["helpful", "not-helpful"] }, "comment": { "type": "string", "maxLength": 2000 } } }] }
+  }
+}

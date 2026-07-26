@@ -1,0 +1,11 @@
+{
+  "mappingVersion": "teach-skill-mapping/v1",
+  "runtimeDependency": false,
+  "mappings": [
+    { "teachConcept": "MISSION.md / context", "openBookRecord": "journey goal / context" },
+    { "teachConcept": "RESOURCES.md", "openBookRecord": "source candidate / use / gap" },
+    { "teachConcept": "learning records / notes", "openBookRecord": "learner state / preferences" },
+    { "teachConcept": "lesson HTML", "openBookRecord": "declarative HtmlPageSpec" },
+    { "teachConcept": "shared assets", "openBookRecord": "later stable-component catalog input" }
+  ]
+}
