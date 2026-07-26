@@ -8,7 +8,7 @@
     "packages/*"
   ],
   "scripts": {
-    "typecheck": "tsc --build packages/contracts/tsconfig.json apps/web/tsconfig.json",
+    "typecheck": "tsc --build packages/contracts/tsconfig.json apps/web/tsconfig.json packages/course-agent/tsconfig.json",
     "test": "npm run test --workspaces --if-present"
   },
   "devDependencies": {
