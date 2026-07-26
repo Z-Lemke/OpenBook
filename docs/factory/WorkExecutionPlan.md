@@ -2,25 +2,36 @@
 
 Status: Accepted
 
-Accepted: 2026-07-25
+Accepted: 2026-07-26
 
-Based on: [accepted Requirements Document](Requirements.md) (accepted at `50252064f91b500efd30bb95cc8ac14724bdf279`) and [accepted Solution Document](Solution.md) (accepted 2026-07-25)
+Based on: [accepted Requirements Document](Requirements.md) (accepted at `50252064f91b500efd30bb95cc8ac14724bdf279`) and [accepted Solution Document](Solution.md) (accepted at `c92582dfd246d6d6bfc1a244865da3b543f8aeb0`)
 
 ## Delivery Strategy
 
-Build a contract-first walking skeleton, then use its evidence to earn the target
-architecture. `I01` is the only shared interface-first PR: its versioned Course Artifact
-fixtures let four independently reviewable PRs proceed in parallel—the combined Teach/Learn
-agent, deterministic HTML renderer, local record/feedback store, and end-to-end harness.
-Their integration creates the first learner journey; demonstrations guide scope and priority
-but are not artificial serialization points.
+Build a TypeScript-first, contract-first walking skeleton. `I01` establishes the
+standard TypeScript workspace: the versioned `CourseArtifact` JSON Schema,
+TypeScript types and validator, Vitest fixtures, and pull-request typecheck/test
+CI. It is the single shared interface PR. Once it lands, the combined Teach/Learn
+course agent, deterministic Next/React renderer, local Node/SQLite record adapter,
+and end-to-end harness can proceed as independently reviewable PRs in parallel.
+Their integration creates the first learner journey; demonstrations inform later
+scope but do not impose artificial serialization.
 
-The delivery order is deliberately evolutionary: clean declarative HTML and bounded
-agent-driven adaptation first; continuity next; then practical activities/SRS and stable
-component reuse in parallel. Mature capability adaptation and source policy follow the
-experience that supplies their signals. Productization observes repeated value without
-automatic promotion. The executable generated-component runtime is a separate, late
-Wayfinder, opened only by an evidenced HTML/catalog gap and an H1 decision.
+The delivery path remains evolutionary. Stage 0 proves a combined agent can create
+a source-grounded course and clean declarative HTML pages, rendered by trusted
+React components, with feedback/work captured through validated learner commands.
+Stage 1 earns continuity. Stage 2 adds practical activities, deterministic SRS, and
+stable component selection/reuse. Only after those experiences generate useful
+signals do mature capability adaptation and algorithmic source policy arrive.
+Productization observes patterns without automatic promotion. The executable
+generated-component runtime is a separate, late Wayfinder that needs both an
+observed HTML/catalog gap and `h1`'s affirmative decision.
+
+`I02` includes a deliberate Teach-skill compatibility seam: it maps the useful
+workflow concepts (mission/context, resource research, learning records, lesson
+HTML, and reusable assets) to application-owned records and `HtmlPageSpec`. The
+skill is an inspiration and evaluation reference, never a runtime dependency or a
+workspace-file persistence model.
 
 ## Project
 
@@ -41,15 +52,15 @@ Wayfinder, opened only by an evidenced HTML/catalog gap and an H1 decision.
 
 ## Derived Work Graph View
 
-Markdown tables below are authoritative. Solid arrows are hard implementation or interface
-dependencies. Dashed arrows are demonstration/Wayfinder feedback: they can change later
-scope, but waiting for feedback alone never blocks a safe, otherwise-ready PR.
+Markdown tables below are authoritative. Solid arrows are hard implementation or
+interface dependencies. Dashed arrows are demonstration/Wayfinder feedback: they
+can change later scope, but feedback alone never blocks a safe, otherwise-ready PR.
 
 ```mermaid
 flowchart LR
-  I01["I01 Course Artifact contract & fixtures"] --> I02["I02 combined Teach/Learn agent"]
-  I01 --> I03["I03 deterministic HTML renderer"]
-  I01 --> I04["I04 local record & feedback"]
+  I01["I01 TypeScript contract, Vitest, CI"] --> I02["I02 combined Teach/Learn agent"]
+  I01 --> I03["I03 Next/React HTML renderer"]
+  I01 --> I04["I04 Node/SQLite record adapter"]
   I01 --> I05["I05 end-to-end harness"]
   I02 --> I05
   I03 --> I05
@@ -71,11 +82,11 @@ flowchart LR
   I13 --> I14
   I10 --> I15["I15 capability & adaptation model"]
   I12 --> I15
-  I06 --> I15["I15 capability & adaptation model"]
+  I06 --> I15
   I07 --> I15
   I10 --> I16["I16 source qualification policy seam"]
   I12 --> I16
-  I01 --> I16["I16 source qualification policy seam"]
+  I01 --> I16
   I06 --> I16
   I15 --> I17["I17 mature adaptation/source scenario"]
   I16 --> I17
@@ -84,8 +95,8 @@ flowchart LR
   I12 --> I20["I20 runtime Wayfinder decision"]
   I20 --> I21["I21 constrained runtime"]
   I21 --> I22["I22 generated-component scenario"]
-  I22 --> I23
-  I10 --> I23["I23 cross-subject integration"]
+  I22 --> I23["I23 cross-subject integration"]
+  I10 --> I23
   I12 --> I23
   I14 --> I23
   I17 --> I23
@@ -110,9 +121,10 @@ flowchart LR
 
 ## Flat Work Units
 
-All Units are `Open`, owned by `h1`, and are ready when their listed hard dependencies are
-`Done`. Every Agent Item is owned by `a1`; Human Items are owned by `h1`. Demonstration
-metadata is evidence and feedback, not a dependency unless explicitly named in an Item.
+All Units are `Open`, owned by `h1`, and are ready when their listed hard
+dependencies are `Done`. Every Agent Item is owned by `a1`; Human Items are owned
+by `h1`. Demonstration metadata is evidence and feedback, not a dependency unless
+explicitly named in an Item.
 
 ### U01 — Contract-first HTML learning loop
 
@@ -121,15 +133,15 @@ metadata is evidence and feedback, not a dependency unless explicitly named in a
 | Project / human owner / state | `openbook-local-first` / `h1` / Open |
 | Dependencies | None |
 | Demonstration IDs / evidence | `D01`; intake, source candidates/use/gaps, clean course/lesson pages, feedback/work, restart, and auditable lineage. |
-| Contextual Definition of Done | A versioned Course Artifact and fixture suite permit independent agent, renderer, persistence, and harness PRs; application-owned writes prevent agents/pages from directly mutating records. |
+| Contextual Definition of Done | A versioned TypeScript Course Artifact contract and fixture suite permit independent agent, renderer, persistence, and harness PRs; application-owned writes prevent agents/pages from directly mutating records. |
 
 | Work Item | Kind / owner / state | Dependencies | Contextual Definition of Done and evidence |
 | --- | --- | --- | --- |
-| `I01` Course Artifact contract and fixtures | Agent / `a1` / Open | None | Immutable versioned artifact, declarative `HtmlPageSpec`, source candidate/use/gap, work, feedback, and command fixtures pass schema and lineage checks. |
-| `I02` Combined Teach/Learn course agent | Agent / `a1` / Open | `I01` | One backend agent turns intake and discovered evidence into a source-grounded course; gaps precede unsupported claims. |
-| `I03` Deterministic clean HTML renderer | Agent / `a1` / Open | `I01` | Accessible course/lesson HTML is deterministically rendered from fixtures and validates learner actions into commands. |
-| `I04` Local record and feedback persistence | Agent / `a1` / Open | `I01` | Application-owned durable records retain artifact lineage, feedback, work, and source evidence across restart. |
-| `I05` End-to-end demo/test harness | Agent / `a1` / Open | `I01`, `I02`, `I03`, `I04` | Repeatable local scenario captures intake, pages, work/feedback, restart, and source lineage. |
+| `I01` TypeScript Course Artifact contract, fixtures, and baseline checks | Agent / `a1` / Open | None | Establish the Next/TypeScript workspace shape needed by the contract packages; versioned Course Artifact and learner-command JSON Schemas, TS types, public validator, `HtmlPageSpec`, source candidate/use/gap, work, feedback, and lineage fixtures pass Vitest. A learner command is a validated intent across the React page/application boundary (for example start/resume, submit work, or give feedback), not a direct persistence instruction; invalid or unknown commands cannot write. GitHub Actions runs `typecheck` and Vitest on pull requests. |
+| `I02` Combined Teach/Learn course agent | Agent / `a1` / Open | `I01` | One Node-side application agent turns intake and discovered evidence into a source-grounded course; gaps precede unsupported claims. Document/test the Teach-skill mapping seam: mission/context → journey goal, resources → source candidate/use/gap, learning record → learner state, lesson HTML → declarative `HtmlPageSpec`, and assets → later catalog input. |
+| `I03` Deterministic Next/React HTML renderer | Agent / `a1` / Open | `I01` | The local Next.js Node-runtime application deterministically renders accessible course/lesson React/HTML from fixtures, applies trusted layout/style rules, and translates learner interaction into validated commands. It does not execute generated scripts or accept raw privileged HTML. |
+| `I04` Local Node/SQLite record and feedback adapter | Agent / `a1` / Open | `I01` | TypeScript core ports and a transactional local SQLite adapter retain artifact lineage, feedback, work, and source evidence across restart. Next route/server adapters are callers, never the direct durable-state owner. |
+| `I05` End-to-end demo/test harness | Agent / `a1` / Open | `I01`, `I02`, `I03`, `I04` | Standard TypeScript integration tests exercise a repeatable local scenario: intake, agent artifact, rendered pages, work/feedback command, restart, and source lineage. |
 
 ### U02 — Integrated continuity journey
 
@@ -142,9 +154,9 @@ metadata is evidence and feedback, not a dependency unless explicitly named in a
 
 | Work Item | Kind / owner / state | Dependencies | Contextual Definition of Done and evidence |
 | --- | --- | --- | --- |
-| `I06` Journey revisions and recovery | Agent / `a1` / Open | `I04`, `I05` | Migration-safe revisions, preferences, outcomes, backup/restore, and recovery checks preserve local journey context. |
-| `I07` Bounded feedback adaptation | Agent / `a1` / Open | `I02`, `I04` | Feedback/work produces a durable, explained next-step, pacing, or plan revision without a mature evidence engine. |
-| `I08` Continuity integration scenario | Agent / `a1` / Open | `I06`, `I07` | Restart/recovery and feedback-driven revision evidence is reproducible. |
+| `I06` Journey revisions and recovery | Agent / `a1` / Open | `I04`, `I05` | Migration-safe TypeScript repositories, immutable revisions, preferences, outcomes, backup/restore, and recovery checks preserve local journey context. |
+| `I07` Bounded feedback adaptation | Agent / `a1` / Open | `I02`, `I04` | Feedback/work creates a durable, explained next-step, pacing, or plan revision without a mature capability-evidence engine. |
+| `I08` Continuity integration scenario | Agent / `a1` / Open | `I06`, `I07` | Next application restart/recovery and feedback-driven revision evidence are reproducible through the normal test stack. |
 
 ### U03 — Practical learning, SRS, and stable components
 
@@ -153,13 +165,13 @@ metadata is evidence and feedback, not a dependency unless explicitly named in a
 | Project / human owner / state | `openbook-local-first` / `h1` / Open |
 | Dependencies | `U02` |
 | Demonstration IDs / evidence | `D03`; practical activity, deterministic review, stable-component selection/reuse, and catalog gaps are visible. |
-| Contextual Definition of Done | Activity and Review Item primitives persist outcomes and deterministic review; declarative presentation intent selects stable components and records usage, reuse, outcomes, feedback, and catalog gaps. No executable generated code is used. |
+| Contextual Definition of Done | Activity and Review Item primitives persist outcomes and deterministic review; declarative presentation intent selects stable React components and records usage, reuse, outcomes, feedback, and catalog gaps. No executable generated code is used. |
 
 | Work Item | Kind / owner / state | Dependencies | Contextual Definition of Done and evidence |
 | --- | --- | --- | --- |
-| `I09` Activity and review records | Agent / `a1` / Open | `I06` | Activity outcomes and deterministic due/reschedule behavior persist across restart. |
-| `I10` Malay activity/SRS scenario | Agent / `a1` / Open | `I09` | A practical activity and vocabulary review produce visible evidence and a subsequent learning input. |
-| `I11` Stable catalog and selection | Agent / `a1` / Open | `I03`, `I06` | Catalog and layout selection are deterministic and retain gap/reuse evidence. |
+| `I09` Activity and review records | Agent / `a1` / Open | `I06` | Activity outcomes and deterministic `dueFor`/`reschedule` behavior persist across restart. |
+| `I10` Malay activity/SRS scenario | Agent / `a1` / Open | `I09` | A practical Malay activity and vocabulary review produce visible evidence and a subsequent learning input. |
+| `I11` Stable catalog and selection | Agent / `a1` / Open | `I03`, `I06` | A typed stable React component catalog and declarative layout selection retain gap/reuse evidence. |
 | `I12` Component evidence scenario | Agent / `a1` / Open | `I09`, `I11` | An activity/review renders with selected stable components and retains usage/outcome/feedback and catalog-gap evidence. |
 
 ### U04 — Operations and quality checks
@@ -169,12 +181,12 @@ metadata is evidence and feedback, not a dependency unless explicitly named in a
 | Project / human owner / state | `openbook-local-first` / `h1` / Open |
 | Dependencies | `U02` |
 | Demonstration IDs / evidence | `D02`, `D07`; clean setup, health, backup/restore, and contributor checks. |
-| Contextual Definition of Done | Local setup, operation, health, migration/recovery, known limitations, and automated checks are documented and exercised alongside the product. |
+| Contextual Definition of Done | Local Next/Node setup, operation, health, migration/recovery, known limitations, and automated TypeScript checks are documented and exercised alongside the product. |
 
 | Work Item | Kind / owner / state | Dependencies | Contextual Definition of Done and evidence |
 | --- | --- | --- | --- |
-| `I13` Operations and recovery docs | Agent / `a1` / Open | `I06` | Setup, health, backup/restore, recovery, and data-boundary guidance are runnable locally. |
-| `I14` Regression and contributor checks | Agent / `a1` / Open | `I05`, `I13` | Fixture, integration, restart/recovery, and contribution checks run from documented setup. |
+| `I13` Operations and recovery docs | Agent / `a1` / Open | `I06` | Setup, Node runtime expectations, health, backup/restore, recovery, and data-boundary guidance are runnable locally. |
+| `I14` Regression and contributor checks | Agent / `a1` / Open | `I05`, `I13` | Vitest fixtures/integration, restart/recovery, typecheck, CI, and contribution checks run from documented setup. |
 
 ### U05 — Mature adaptation and source policy
 
@@ -216,7 +228,7 @@ metadata is evidence and feedback, not a dependency unless explicitly named in a
 
 | Work Item | Kind / owner / state | Dependencies | Contextual Definition of Done and evidence |
 | --- | --- | --- | --- |
-| `I20` Generated-runtime Wayfinder decision | Human / `h1` / Open | `I12` | Record whether observed insufficiency justifies the bounded runtime; absence of a decision leaves HTML/catalog as the route. |
+| `I20` Generated-runtime Wayfinder decision | Human / `h1` / Open | `I12` | Record whether observed insufficiency justifies the bounded runtime; no decision leaves declarative HTML and stable React components as the route. |
 | `I21` Package validator and constrained runtime | Agent / `a1` / Open | `I20` | Hash/contract/capability validation, CSP/sandbox/MessageChannel boundary, denial audit, fallback, and revocation pass boundary tests. |
 | `I22` Generated-component evidence scenario | Agent / `a1` / Open | `I21` | A documented-gap component shows constrained rendering, provenance, usage/outcome/feedback, denied request, fallback, and revocation. |
 
@@ -239,9 +251,9 @@ metadata is evidence and feedback, not a dependency unless explicitly named in a
 
 | Order | Demonstration | Participating Units | Observable evidence and reviewers | Feedback consequence |
 | --- | --- | --- | --- | --- |
-| 1 | `D01` Walking skeleton | `U01`, `U02` | `h1` observes intake, source-grounded clean HTML course/lesson pages, feedback/work, restart, and source lineage. | Changes U01/U02 implementation scope; it does not block already-defined integration dependencies. |
+| 1 | `D01` Walking skeleton | `U01`, `U02` | `h1` observes intake, source-grounded clean Next/React course/lesson pages, feedback/work commands, restart, and source lineage. | Changes U01/U02 implementation scope; it does not block already-defined integration dependencies. |
 | 2 | `D02` Continuity | `U02`, `U04` | `h1` observes revision history, restart/backup/restore, and a bounded feedback/work-driven next-step change. | Informs experience investment; it is feedback, not a hard dependency. |
-| 3 | `D03` Activities, SRS, and stable components | `U03` | `h1` observes practical work, persistent review, component reuse, and catalog-gap evidence. | An evidenced insufficiency may justify `I20`; otherwise HTML/catalog remains sufficient. |
+| 3 | `D03` Activities, SRS, and stable components | `U03` | `h1` observes practical work, persistent review, component reuse, and catalog-gap evidence. | An evidenced insufficiency may justify `I20`; otherwise declarative HTML/catalog remains sufficient. |
 | 4 | `D04` Mature adaptation and source policy | `U05`, `U06` | `h1` observes capability-driven changes, source-decision audit trail, weak/poor-source effect, a gap, and policy lineage. | Revises calibration or policy; never creates an H1 source-use gate. |
 | 5 | `D05` Generic cross-subject integration | `U03`, `U05`, `U06`, `U08` | `h1` observes an additional viable subject using generic seams and auditable outcomes. | May change final integration scope and release readiness. |
 | 6 | `D06` Generated component, if justified | `U07` | Only if opened, `h1` reviews bounded capability, denial, provenance, fallback, and revocation evidence. | Security concern prevents richer privilege; no decision leaves the normal route in place. |
@@ -249,7 +261,6 @@ metadata is evidence and feedback, not a dependency unless explicitly named in a
 
 ## Human decision
 
-Accepted by Luke Lemke on 2026-07-25. The parallel delivery strategy, dependencies,
-ownership, Wayfinder gates, and Demo Story are approved as the basis for tracker
-synchronization. Build Execution remains unavailable until the accepted plan is
-materialized in the authoritative tracker.
+Accepted by Luke Lemke on 2026-07-26. This TypeScript/Next.js Work Execution Plan
+supersedes the previous Python-oriented plan, preserves the target architecture and
+evolutionary delivery order, and authorizes a new tracker synchronization preview.
