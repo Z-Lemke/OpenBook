@@ -1,0 +1,6 @@
+{
+  "name": "@openbook/web",
+  "private": true,
+  "version": "0.0.0",
+  "description": "Reserved Next.js learner application workspace; I03 selects and installs the runtime when it adds rendering."
+}
