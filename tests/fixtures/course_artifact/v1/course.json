@@ -1,0 +1,99 @@
+{
+  "schemaVersion": "course-artifact/v1",
+  "artifactId": "course-malay-greetings-r1",
+  "revision": 1,
+  "predecessorArtifactId": null,
+  "learner": {
+    "goal": "Hold a short Malay greeting conversation with family.",
+    "availableMinutesPerDay": 20
+  },
+  "title": "Malay greetings",
+  "lessons": [
+    {
+      "lessonId": "lesson-greetings-1",
+      "order": 1,
+      "title": "Say hello and introduce yourself",
+      "page": {
+        "pageId": "lesson-greetings-1-page",
+        "kind": "lesson",
+        "title": "Say hello and introduce yourself",
+        "blocks": [
+          {
+            "blockId": "lesson-greetings-1-intro",
+            "type": "text",
+            "text": "Learn two greetings, then practice choosing one."
+          },
+          {
+            "blockId": "lesson-greetings-1-practice",
+            "type": "prompt",
+            "text": "Choose the greeting you would use with your family."
+          }
+        ]
+      }
+    }
+  ],
+  "coursePage": {
+    "pageId": "course-malay-greetings-page",
+    "kind": "course",
+    "title": "Malay greetings",
+    "blocks": [
+      {
+        "blockId": "course-overview",
+        "type": "text",
+        "text": "A short, practical introduction to Malay greetings."
+      }
+    ]
+  },
+  "readAheadPage": {
+    "pageId": "course-malay-greetings-read-ahead",
+    "kind": "read-ahead",
+    "title": "Read ahead",
+    "blocks": [
+      {
+        "blockId": "read-ahead-summary",
+        "type": "text",
+        "text": "Next, you will practice answering a greeting."
+      }
+    ]
+  },
+  "dailyPage": {
+    "pageId": "course-malay-greetings-daily",
+    "kind": "daily",
+    "title": "Today in Malay",
+    "blocks": [
+      {
+        "blockId": "daily-next-lesson",
+        "type": "lesson-link",
+        "lessonId": "lesson-greetings-1",
+        "text": "Start today's greeting lesson."
+      }
+    ]
+  },
+  "sourceCandidates": [
+    {
+      "sourceId": "source-dewan-bahasa-greetings",
+      "title": "Malay greeting reference",
+      "url": "https://example.org/malay-greeting-reference",
+      "coverage": "Everyday Malay greeting vocabulary for the first lesson.",
+      "provenance": "Discovered by the course-planning agent during intake.",
+      "permittedUse": "Reference allowed under the source's published educational-use terms.",
+      "retrievalContext": "Retrieved during intake planning on 2026-07-26."
+    }
+  ],
+  "sourceUses": [
+    {
+      "useId": "source-use-greetings-1",
+      "sourceId": "source-dewan-bahasa-greetings",
+      "lessonId": "lesson-greetings-1",
+      "role": "vocabulary reference",
+      "coveredClaim": "The lesson's greeting vocabulary is grounded in this reference."
+    }
+  ],
+  "sourceGaps": [
+    {
+      "gapId": "source-gap-regional-register",
+      "lessonId": "lesson-greetings-1",
+      "need": "A source explaining regional and family-specific greeting register."
+    }
+  ]
+}

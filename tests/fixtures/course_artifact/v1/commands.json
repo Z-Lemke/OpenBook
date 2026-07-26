@@ -1,0 +1,21 @@
+[
+  {
+    "commandVersion": "learning-command/v1",
+    "commandId": "command-work-greetings-1",
+    "type": "recordWork",
+    "learnerId": "learner-local-luke",
+    "artifactId": "course-malay-greetings-r1",
+    "lessonId": "lesson-greetings-1",
+    "outcome": "completed"
+  },
+  {
+    "commandVersion": "learning-command/v1",
+    "commandId": "command-feedback-greetings-1",
+    "type": "recordFeedback",
+    "learnerId": "learner-local-luke",
+    "artifactId": "course-malay-greetings-r1",
+    "lessonId": "lesson-greetings-1",
+    "rating": "helpful",
+    "comment": "The short practice felt right for today."
+  }
+]
