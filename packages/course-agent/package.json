@@ -14,9 +14,8 @@
     "typecheck": "tsc --build"
   },
   "dependencies": {
-    "@ai-sdk/openai": "^4.0.20",
     "@openbook/contracts": "0.0.0",
-    "ai": "^7.0.37"
+    "openai": "^6.49.0"
   },
   "devDependencies": {
     "@types/node": "^22.15.3",

@@ -1,19 +1,20 @@
-# I02 OpenAI provider-adapter evidence
+# I02 DeepSeek provider-adapter evidence
 
 Target branch: `main`
 Work-item issue: https://github.com/Z-Lemke/OpenBook/issues/3
 
 ## Definition of Done
 
-- A Node-only OpenAI adapter implements the existing injected
+- A Node-only direct official OpenAI SDK adapter targets DeepSeek's
+  OpenAI-compatible endpoint through the existing injected
   `CourseArtifactGenerator` seam without adding persistence, renderer, or UI
   scope.
-- It requires server-local configuration, returns structured declarative course
-  output, and preserves application-owned learner/source evidence and contract
-  validation.
-- Tests cover missing configuration, a valid provider result, replacement of
-  model-supplied authority fields, prompt constraints, and invalid output with
-  mocked provider modules only.
+- It requires server-local `DEEPSEEK_API_KEY`, uses fixed
+  `deepseek-v4-flash` JSON mode, shapes a no-sensitive-data payload that omits
+  learner state, and preserves application-owned learner/source validation.
+- Tests cover missing configuration, exact endpoint/model/JSON-mode request,
+  minimized request shaping, empty content, and invalid output with mocked SDK
+  calls only.
 - Local setup and data/secret boundaries are documented.
 
 ## Sources
@@ -31,7 +32,7 @@ Red evidence, before the adapter existed:
 
 ```text
 npm run test --workspace @openbook/course-agent -- openai-course-artifact-generator.test.ts
-3 failed: createOpenAICourseArtifactGenerator is not a function
+6 failed: createDeepSeekCourseArtifactGenerator is not a function
 ```
 
 The failure was specific to the absent provider factory, not an environment or
@@ -48,10 +49,13 @@ git diff --check                                 # passed
 
 ## Independent review
 
-One Factory Reviewer pass found no actionable findings or blockers. It verified
-the Node-only boundary, eager missing-key error, mock-only tests, structured
-output through the final validation boundary, declarative/source-gap prompt
-constraints, and documented privacy/operational scope.
+The earlier OpenAI/AI SDK review is superseded by this direct DeepSeek adapter
+revision. The DeepSeek reviewer found two issues: JSON mode alone did not give
+the model a complete valid Course Artifact target, and the privacy test did not
+prove the exact request shape. The adapter now embeds the versioned artifact
+schema in its JSON instruction; the test parses and exactly compares the
+outbound payload, proving that `learnerState` is excluded. Affected checks were
+rerun after those fixes; no second reviewer pass is invoked.
 
 Non-blocking follow-up: when I13 local-operation documentation arrives, state
 Node 22 explicitly as a prerequisite because the selected AI SDK provider
@@ -59,10 +63,15 @@ requires it and CI already uses Node 22.
 
 ## Remaining risks
 
-- A live local run requires a user-supplied `OPENAI_API_KEY`; it was not used or
-  validated against the network here.
-- `generateObject` is the smallest structured-output API for this adapter but is
-  marked deprecated by the currently installed AI SDK in favor of newer API
-  shapes; revisit only when updating the provider SDK.
+- A live local run requires a user-supplied `DEEPSEEK_API_KEY`; it was not used
+  or validated against the network here.
+- DeepSeek documentation notes that JSON mode can return empty content. This
+  adapter reports that as a typed retryable failure and performs no retry.
+- DeepSeek's policy states personal data can be processed and stored in the PRC
+  and advises avoiding sensitive data. The adapter omits learner state by
+  construction, but callers remain responsible for never placing sensitive data
+  in goals or intentionally selected source evidence.
+- `deepseek-v4-flash` is an initial cost/quality hypothesis pending a future
+  evaluation suite; no learning-quality benchmark claim is made here.
 - This increment does not persist provider/model provenance or responses. That
   is intentionally deferred to the local record layer.
