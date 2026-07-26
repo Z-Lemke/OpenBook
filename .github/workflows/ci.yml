@@ -14,6 +14,10 @@ jobs:
         with:
           node-version: 22
           cache: npm
-      - run: npm ci
-      - run: npm run typecheck
-      - run: npm test
+      # I02 adds a workspace without changing the root lockfile. Keep the lockfile
+      # untouched while installing declared workspace dependencies for CI.
+      - run: npm install --package-lock=false --ignore-scripts
+      - run: npm run typecheck --workspace @openbook/contracts
+      - run: npm run typecheck --workspace @openbook/course-agent
+      - run: npm run test --workspace @openbook/contracts
+      - run: npm run test --workspace @openbook/course-agent
