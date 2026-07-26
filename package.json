@@ -8,8 +8,8 @@
     "packages/*"
   ],
   "scripts": {
-    "typecheck": "tsc --build packages/contracts/tsconfig.json",
-    "test": "npm run test --workspace @openbook/contracts"
+    "typecheck": "tsc --build packages/contracts/tsconfig.json apps/web/tsconfig.json",
+    "test": "npm run test --workspaces --if-present"
   },
   "devDependencies": {
     "typescript": "^5.8.3"

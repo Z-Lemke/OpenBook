@@ -2,5 +2,25 @@
   "name": "@openbook/web",
   "private": true,
   "version": "0.0.0",
-  "description": "Reserved Next.js learner application workspace; I03 selects and installs the runtime when it adds rendering."
+  "description": "Local Next.js learner application.",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "test": "vitest run"
+  },
+  "dependencies": {
+    "@openbook/contracts": "file:../../packages/contracts",
+    "next": "^16.2.12",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0"
+  },
+  "devDependencies": {
+    "@testing-library/react": "^16.3.0",
+    "@testing-library/user-event": "^14.6.1",
+    "@types/react": "^19.1.2",
+    "@types/react-dom": "^19.1.2",
+    "jsdom": "^26.1.0",
+    "vitest": "^3.1.3"
+  }
 }
